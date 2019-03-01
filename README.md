@@ -1,2 +1,2 @@
 # Linear-Algebra-Scilab
-A collection of codes related to matrix operations that I have written in Scilab
+A collection of different algorithms that I have coded in Scilab
