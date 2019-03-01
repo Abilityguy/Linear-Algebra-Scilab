@@ -3,7 +3,7 @@
 n = input("Enter the value of n: ") //n*n matrix
 A = eye(n,n) //Initialzing A as an identity matrix
 
-// Loop to take the matrix elements through user input
+//Loop to take the matrix elements through user input
 for i = 1:n
     for j = 1:n
         A(i,j) = int(input("Enter value for A["+string(i)+","+string(j)+"]: "))
@@ -47,24 +47,24 @@ disp([A b]) //displaying the augmented matrix
 disp("Performing gaussian elimination we get")
 
 for i = 1:n-1
-    //Checking pivots again if we get a zero in pivot during gaussian elimination
-     if(A(i,i) == 0)
-       k = i+1
-       while(A(i,i) == 0 & k < n+1)
-           if(A(k,i) ~= 0)
-               b([k,1],:) = b([i,1],:)
-               A([i,k],:) = A([k,i],:)
-           end
-           k = k+1
-       end
-    end
-    //Gaussian elimination where we make pivot positions in subsequent rows zero
     for j = i+1:n
-       multiplier = A(j,i)/A(i,i)
-       b(j,1) = b(j,1) - multiplier*b(i,1)
-       for k = 1:n
-          A(j,k) = A(j,k) - multiplier*A(i,k)
-       end  
+    //Checking pivots again if we get a zero in pivot during gaussian elimination
+       if(A(i,i) == 0)
+        k = i+1
+           while(A(i,i) == 0 & k < n+1)
+               if(A(k,i) ~= 0)
+                   b([k,1],:) = b([i,1],:)
+                   A([i,k],:) = A([k,i],:)
+               end
+               k = k+1
+           end
+        end
+    //Gaussian elimination where we make pivot positions in subsequent rows zero
+        multiplier = A(j,i)/A(i,i)
+        b(j,1) = b(j,1) - multiplier*b(i,1)
+        for k = 1:n
+           A(j,k) = A(j,k) - multiplier*A(i,k)
+        end  
     end 
 end
 
