@@ -43,10 +43,6 @@ end
 l = eye(n,n) // initialzing our to-be lower triangular matrix
 p = eye(n,n) //Initializing a permutation matrix which takes care of row exchanges
 
-sing = 0
-non_zero = 0
-
-
 for i = 1:n-1
     //Checking pivots again if we get a zero in pivot during gaussian elimination
     for j = i+1:n
