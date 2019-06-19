@@ -1,4 +1,4 @@
-////Program to find the inverse of the given square matrix through Gauss-Jordan elimination
+//Program to find the inverse of the given square matrix through Gauss-Jordan elimination
 
 n = input("Enter the value of n: ")//n*n matrix
 A = eye(n,n)//Initialzing A as an identity matrix
@@ -72,6 +72,14 @@ end
 
 disp("The augmented matrix after gaussian elimination:")
 disp([A B])
+
+//Checking for zeros in pivot position
+for i = 1:n
+    if(A(i,i) == 0)
+        disp("Inverse of the matrix does not exist")
+        abort //exit the program
+    end
+end
 
 //Converting the A matrix into a diagonal matrix
 for i = n:-1:1

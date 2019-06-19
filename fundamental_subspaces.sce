@@ -30,15 +30,3 @@ disp ( rs , 'Row space of A:') //prints all rows with pivots
 
 lns = kernel (A'); //finds null space of A' which is left null space of A
 disp ( lns , 'Left nullspace of A:') ;
-
-/*
-i = 1
-while(i < m && j < n)
-    disp("in loop")
-    if(B(i,j) ~= 0)
-        disp(A(:,j))
-        i = i + 1 
-    end
-    j = j + 1 
-end
-*/
